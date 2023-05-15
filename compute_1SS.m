@@ -1,6 +1,6 @@
 clear all;
 
-sexORrep = 'preg'; % options: male, female, preg, lact
+sexORrep = 'female'; % options: male, female, preg, lact
 altsim = 0;
 
 %----------------
@@ -24,6 +24,8 @@ fprintf('loading %s params \n', sexORrep)
 run('read_in_params.m')
 
 % % change parameters here!
+kconvmin = 14.21538e-06; params(22) = kconvmin;
+
 %--------------------
 % End of user input
 %--------------------
