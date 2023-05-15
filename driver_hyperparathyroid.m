@@ -1,6 +1,6 @@
 % predicted impact of hyperparathyroidism
 clear all;
-sexORrep = 'preg';
+sexORrep = 'lact';
 
 % set up baseline parameters
 run('read_in_params.m')
@@ -130,4 +130,7 @@ for ii = 1:length(PTHchange_vals)
     save(fname_save, 'SS', 'params', 'sexORrep', 'valsSS',...
             'PTHchange', 'k_prod_PTHg')
 
+
 end
+
+fprintf('hyperPTH for %s complete \n', sexORrep)
