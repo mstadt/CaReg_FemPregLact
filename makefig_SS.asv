@@ -1,31 +1,37 @@
-% this script is for making figures that compare the steady state values
-% for the four models in my study
+% This script creates the baseline steady state figures found in the
+% manuscript draft (Fig 3.1 and 3.2)
 
 %-----------------------
 % User Input
 %-----------------------
 compare = 4; % 3 or 4
 
+
+% load files where SS solutions are stored
+
+% male file
 fname1 = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-male_notes-newmale.mat';
 SSdat1 = load(fname1);
 vals1 = SSdat1.valsSS;
 SS1 = SSdat1.SS;
 lab1 = 'male';
 
-
+% female file
 fname2 = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-female_notes-newfemale.mat';
 SSdat2 = load(fname2);
 vals2 = SSdat2.valsSS;
 SS2 = SSdat2.SS;
 lab2 = 'female';
 
-fname3 = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHadjust_preg.mat';
+% pregnancy file
+fname3 = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
 SSdat3 = load(fname3);
 vals3 = SSdat3.valsSS;
 SS3 = SSdat3.SS;
 lab3 = 'pregnancy';
 
-fname4 = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHadjustlact.mat';
+% lactation file
+fname4 = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
 SSdat4 = load(fname4);
 vals4 = SSdat4.valsSS;
 SS4 = SSdat4.SS;

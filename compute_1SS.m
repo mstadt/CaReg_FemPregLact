@@ -24,11 +24,6 @@ fprintf('loading %s params \n', sexORrep)
 run('read_in_params.m')
 
 % % change parameters here!
-%GamFetORMilk = 0.389e-3; params(37) = GamFetORMilk;
-%ICa = 1.05*1.84e-3; params(25) = ICa;
-%GamAbs0 = 0.55; params(26) = GamAbs0;
-%deltaabs = 0.425; params(27) = deltaabs;
-%KabsD3 = 265; params(28) = KabsD3;
 %--------------------
 % End of user input
 %--------------------
@@ -44,11 +39,11 @@ elseif strcmp(sexORrep, 'female')
     SS_IG = load(SSfile).SS;
     Vp = Vp_female;
 elseif strcmp(sexORrep, 'preg')
-    SSfile = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHadjust_preg.mat';
+    SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
     SS_IG = load(SSfile).SS;
     Vp = Vp_preg;
 elseif strcmp(sexORrep, 'lact')
-    SSfile = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHadjustlact.mat';
+    SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
     SS_IG = load(SSfile).SS;
     Vp = Vp_lact;
 end
