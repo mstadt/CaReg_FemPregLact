@@ -1,6 +1,6 @@
 clear all;
 
-sexORrep = 'female'; % options: male, female, preg, lact
+sexORrep = 'lact'; % options: male, female, preg, lact
 altsim = 0;
 
 %----------------
@@ -24,7 +24,8 @@ fprintf('loading %s params \n', sexORrep)
 run('read_in_params.m')
 
 % % change parameters here!
-kconvmin = 14.21538e-06; params(22) = kconvmin;
+%D3inact = 25e3; params(23) = D3inact; 
+gammaprodD3 = 5.4e-3; params(24) = gammaprodD3;
 
 %--------------------
 % End of user input
