@@ -3,9 +3,9 @@ clear all;
 
 PTHchange_vals = 1:1:100;
 
-notes_male = 'PTHchange'; %'gammaProdD3';
-notes_female = 'PTHchange';
-notes_preg = 'PTHchange';
+notes_male = 'may16'; %'gammaProdD3';
+notes_female = 'may16';
+notes_preg = 'PTH2';
 notes_lact = 'PTHchange';
 in_date_male = '16-May-2023';
 in_date_female = '16-May-2023';

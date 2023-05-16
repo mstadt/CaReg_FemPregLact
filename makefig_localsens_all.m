@@ -3,19 +3,19 @@
 clear all;
 
 % male
-fname = './results_localsens/15-May-2023_localsens_sexORrep-male_notes-malerun.mat';
+fname = './results_localsens/16-May-2023_localsens_sexORrep-male_notes-may16.mat';
 male_dat = load(fname);
 
 % female
-fname = './results_localsens/15-May-2023_localsens_sexORrep-female_notes-femalerun.mat';
+fname = './results_localsens/16-May-2023_localsens_sexORrep-female_notes-may16.mat';
 female_dat = load(fname);
 
 % preg
-fname = './results_localsens/15-May-2023_localsens_sexORrep-preg_notes-pregrun.mat';
+fname = './results_localsens/16-May-2023_localsens_sexORrep-preg_notes-PTH2.mat';
 preg_dat = load(fname);
 
 % lact
-fname = './results_localsens/15-May-2023_localsens_sexORrep-lact_notes-lactrun.mat';
+fname = './results_localsens/16-May-2023_localsens_sexORrep-lact_notes-PTH2.mat';
 lact_dat = load(fname);
 
 [male_xlabs, male_vals] = getdata(male_dat);
@@ -54,7 +54,7 @@ ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 fsize = 14;
 colmap = parula;
 cmissdat = 'w';
-labmissdat = '<0.5%';
+labmissdat = '<1.0%';
 
 
 % figure without removing 
@@ -174,7 +174,7 @@ function [xlabels, round_data] = getdata(dat)
     xlabels = labels;
     round_data = round(frac_sens', 2, 'significant');
 
-    [r,c] = find(abs(round_data) <= 0.5);% r - row values, c - column value
+    [r,c] = find(abs(round_data) <= 1.0);% r - row values, c - column value
     for ii = 1:length(r)
         round_data(r(ii),c(ii)) = NaN;
     end
