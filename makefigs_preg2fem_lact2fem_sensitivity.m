@@ -4,7 +4,7 @@
 % Makes Figure 3.5 from manuscript
 clear all
 % file where results for preg 2 virgin, lact 2 virgin results are saved
-fname = './results_preglact_sensitivity/15-May-2023_preg2fem_lact2fem_all_notes-final.mat';
+fname = './results_preglact_sensitivity/16-May-2023_preg2fem_lact2fem_all_notes-PTHchange.mat';
 dat = load(fname);
 
 [preg_xlabs, preg_data] = getdata(dat,'preg');
@@ -40,7 +40,7 @@ end
 temp = [rm_pregdat, rm_lactdat];
 clim = [min(temp,[],'all'), max(temp,[],'all')];
 cmissing = 'w';
-labmissing = '<0.5%';
+labmissing = '<1.0%';
 fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = turbo;
@@ -89,7 +89,7 @@ function [xlabels, round_data] = getdata(dat, pregORlact)
     xlabels = labels;
     round_data = round(frac_sens', 2, 'significant');
 
-    [r,c] = find(abs(round_data) <= 0.5);% r - row values, c - column value
+    [r,c] = find(abs(round_data) <= 1.0);% r - row values, c - column value
     for ii = 1:length(r)
         round_data(r(ii),c(ii)) = NaN;
     end

@@ -1,6 +1,6 @@
 clear all;
 
-sexORrep = 'preg'; % options: male, female, preg, lact
+sexORrep = 'lact'; % options: male, female, preg, lact
 altsim = 0;
 
 %----------------
@@ -26,9 +26,9 @@ run('read_in_params.m')
 % % change parameters here!
 %D3inact = 25e3; params(23) = D3inact; 
 %gammaprodD3 = 5.4e-3; params(24) = gammaprodD3;
-betaexoPTHg = 1.75*0.059; params(48) = betaexoPTHg;
-gamexoPTHg = 0.1012; params(49) = gamexoPTHg;
-KCaCaSR = 1.2; params(38) = KCaCaSR;
+% betaexoPTHg = 1.75*0.059; params(48) = betaexoPTHg;
+% gamexoPTHg = 0.1012; params(49) = gamexoPTHg;
+% KCaCaSR = 1.2; params(38) = KCaCaSR;
 
 %--------------------
 % End of user input
