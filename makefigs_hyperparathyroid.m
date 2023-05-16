@@ -3,13 +3,13 @@ clear all;
 
 PTHchange_vals = 1:1:100;
 
-notes_male = 'malerun'; %'gammaProdD3';
-notes_female = 'femalerun';
-notes_preg = 'pregrun';
-notes_lact = 'lactrun';
-in_date_male = '15-May-2023';
-in_date_female = '15-May-2023';
-in_date = '15-May-2023';
+notes_male = 'PTHchange'; %'gammaProdD3';
+notes_female = 'PTHchange';
+notes_preg = 'PTHchange';
+notes_lact = 'PTHchange';
+in_date_male = '16-May-2023';
+in_date_female = '16-May-2023';
+in_date = '16-May-2023';
 
 [male_SS, male_vars, male_SS_norm, male_vars_norm]         = get_vals(PTHchange_vals, notes_male, 'male', in_date_male);
 [female_SS, female_vars, female_SS_norm, female_vars_norm] = get_vals(PTHchange_vals, notes_female, 'female', in_date_female);
