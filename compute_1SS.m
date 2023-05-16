@@ -1,6 +1,6 @@
 clear all;
 
-sexORrep = 'lact'; % options: male, female, preg, lact
+sexORrep = 'preg'; % options: male, female, preg, lact
 altsim = 0;
 
 %----------------
@@ -24,8 +24,6 @@ fprintf('loading %s params \n', sexORrep)
 run('read_in_params.m')
 
 % % change parameters here!
-%D3inact = 25e3; params(23) = D3inact; 
-gammaprodD3 = 5.4e-3; params(24) = gammaprodD3;
 
 %--------------------
 % End of user input
@@ -42,11 +40,11 @@ elseif strcmp(sexORrep, 'female')
     SS_IG = load(SSfile).SS;
     Vp = Vp_female;
 elseif strcmp(sexORrep, 'preg')
-    SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
+    SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat';
     SS_IG = load(SSfile).SS;
     Vp = Vp_preg;
 elseif strcmp(sexORrep, 'lact')
-    SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
+    SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat';
     SS_IG = load(SSfile).SS;
     Vp = Vp_lact;
 end

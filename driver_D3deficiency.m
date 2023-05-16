@@ -18,9 +18,9 @@ if strcmp(sexORrep, 'male')
 elseif strcmp(sexORrep, 'female')
     SSfile = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-female_notes-newfemale.mat';
 elseif strcmp(sexORrep, 'preg')
-    SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
+    SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat';
 elseif strcmp(sexORrep, 'lact')
-    SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
+    SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat';
 end
 IG = load(SSfile).SS;
 

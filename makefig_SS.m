@@ -24,14 +24,14 @@ SS2 = SSdat2.SS;
 lab2 = 'female';
 
 % pregnancy file
-fname3 = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
+fname3 = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat';
 SSdat3 = load(fname3);
 vals3 = SSdat3.valsSS;
 SS3 = SSdat3.SS;
 lab3 = 'pregnancy';
 
 % lactation file
-fname4 = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
+fname4 = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat';
 SSdat4 = load(fname4);
 vals4 = SSdat4.valsSS;
 SS4 = SSdat4.SS;

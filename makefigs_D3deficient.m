@@ -5,14 +5,14 @@ clear all;
 D3change_vals = (100:-1:1)./100.0;
 
 fig_D3change = (ones(size(D3change_vals)) - D3change_vals) * 100;
-notes_male = 'run1';
-notes_female = 'run1';
-notes_preg = 'run1';
-notes_lact = 'run1';
-in_date_male = '15-May-2023';
-in_date_female = '15-May-2023';
-in_date_preg = '15-May-2023';
-in_date_lact = '15-May-2023';
+notes_male = 'may16';
+notes_female = 'may16';
+notes_preg = 'PTH2';
+notes_lact = 'PTH2';
+in_date_male = '16-May-2023';
+in_date_female = '16-May-2023';
+in_date_preg = '16-May-2023';
+in_date_lact = '16-May-2023';
 
 [male_SS, male_vars, male_SS_norm, male_vars_norm]         = getvals(D3change_vals, notes_male, 'male', in_date_male);
 [female_SS, female_vars, female_SS_norm, female_vars_norm] = getvals(D3change_vals, notes_female, 'female', in_date_female);

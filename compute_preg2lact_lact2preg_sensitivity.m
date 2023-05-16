@@ -13,9 +13,9 @@ clearvars -except pars_preg pars_lact param_names
 
 %%% compute pregnancy to lactation sensitivity
 fprintf('computing pregnancy to lactation sensitivity \n')
-SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
+SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat ';
 ICpreg = load(SSfile).SS;
-SSfile = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
+SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat';
 IClact = load(SSfile).SS;
 
 preglactdiff = abs(pars_preg - pars_lact);

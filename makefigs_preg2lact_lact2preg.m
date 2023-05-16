@@ -5,7 +5,7 @@ clearvars
 
 % Get Data
 % filename where results are stored 
-fname = './results_preglact_sensitivity/15-May-2023_preg2lactsens_notes-preg2lact_lact2preg.mat';
+fname = './results_preglact_sensitivity/16-May-2023_preg2lactsens_notes-PTHupdate.mat';
 dat = load(fname);
 
 [p2l_xlabs, p2l_data] = getdata(dat, 'p2l');
@@ -39,7 +39,7 @@ allNan = intersect(Nan_p2l, Nan_l2p);
 temp = [rm_p2ldat, rm_l2pdat];
 clim = [min(temp,[],'all'),max(temp,[],'all')];
 cmissing = 'w';
-labmissing = '<0.5%';
+labmissing = '<1.0%';
 fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = turbo; %cool;
@@ -85,7 +85,7 @@ function [xlabels, round_data] = getdata(dat, p2lORl2p)
     xlabels = labels;
     round_data = round(frac_sens', 2, 'significant');
 
-    [r,c] = find(abs(round_data) <= 0.5);% r - row values, c - column value
+    [r,c] = find(abs(round_data) <= 1.0);% r - row values, c - column value
     for ii = 1:length(r)
         round_data(r(ii),c(ii)) = NaN;
     end
