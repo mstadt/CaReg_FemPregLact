@@ -2,7 +2,7 @@
 % compute_preg2fem_lact2fem_all.m
 % Makes Figure 3.4 from manuscript
 clear all
-fname = './results_virgin2preglact_sensitivity/15-May-2023_vir2preg_vir2lact_all_notes-final.mat';
+fname = './results_virgin2preglact_sensitivity/16-May-2023_vir2preg_vir2lact_all_notes-PTHupdate2.mat';
 dat = load(fname);
 
 [preg_xlabs, preg_data] = getdata(dat,'vir2preg');
@@ -38,7 +38,7 @@ end
 temp = [rm_pregdat, rm_lactdat];
 clim = [min(temp,[],'all'), max(temp,[],'all')];
 cmissing = 'w';
-labmissing = '<0.5%';
+labmissing = '<1.0%';
 fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = turbo;
@@ -87,7 +87,7 @@ function [xlabels, round_data] = getdata(dat, pregORlact)
     xlabels = labels;
     round_data = round(frac_sens', 2, 'significant');
 
-    [r,c] = find(abs(round_data) <= 0.5);% r - row values, c - column value
+    [r,c] = find(abs(round_data) <= 1.0);% r - row values, c - column value
     for ii = 1:length(r)
         round_data(r(ii),c(ii)) = NaN;
     end

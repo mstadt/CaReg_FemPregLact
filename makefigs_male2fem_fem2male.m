@@ -39,7 +39,7 @@ allNan = intersect(Nan_m2f, Nan_f2m);
 temp = [rm_m2fdat, rm_f2mdat];
 clim = [min(temp,[],'all'),max(temp,[],'all')];
 cmissing = 'w';
-labmissing = '<0.5%';
+labmissing = '<1.0%';
 fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = winter;
@@ -85,7 +85,7 @@ function [xlabels, round_data] = getdata(dat, m2fORf2m)
     xlabels = labels;
     round_data = round(frac_sens', 2, 'significant');
 
-    [r,c] = find(abs(round_data) <= 0.5);% r - row values, c - column value
+    [r,c] = find(abs(round_data) <= 1.0);% r - row values, c - column value
     for ii = 1:length(r)
         round_data(r(ii),c(ii)) = NaN;
     end

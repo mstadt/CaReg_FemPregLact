@@ -10,10 +10,10 @@ dat_male = load(fn1);
 fn2 = './SSbest/12-May-2023_calcium_mod_SS_sexORrep-female_notes-newfemale.mat'; 
 dat_female = load(fn2);
 % preg file
-fn3 = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-preg_notes-FetORMilk.mat';
+fn3 = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat';
 dat_preg = load(fn3);
 % lact file
-fn4 = './SSbest/15-May-2023_calcium_mod_SS_sexORrep-lact_notes-FetORMilkupdate_lact.mat';
+fn4 = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat';
 dat_lact = load(fn4);
 
 % check par names match for all simulations
