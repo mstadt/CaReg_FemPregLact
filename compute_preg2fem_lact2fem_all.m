@@ -22,7 +22,7 @@ notes = input('notes: ');
 %%% compute pregnancy
 fprintf('computing pregnancy sensitivity \n')
 % baseline pregnancy SS results
-SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHchange.mat';
+SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat';
 IC = load(SSfile).SS;
 
 pregdiff = abs(pars_preg - pars_female);
@@ -46,7 +46,7 @@ end
 %%% compute lactation
 fprintf('computing lactation sensitivity \n')
 % baseline lactation SS results
-SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHchange.mat';
+SSfile = './SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat';
 IC = load(SSfile).SS;
 
 lactdiff = abs(pars_lact - pars_female);

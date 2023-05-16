@@ -4,7 +4,7 @@
 % Makes Figure 3.5 from manuscript
 clear all
 % file where results for preg 2 virgin, lact 2 virgin results are saved
-fname = './results_preglact_sensitivity/16-May-2023_preg2fem_lact2fem_all_notes-PTHchange.mat';
+fname = './results_preglact_sensitivity/16-May-2023_preg2fem_lact2fem_all_notes-PTHupdate2.mat';
 dat = load(fname);
 
 [preg_xlabs, preg_data] = getdata(dat,'preg');
