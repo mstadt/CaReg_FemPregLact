@@ -36,6 +36,22 @@ if size(rm_xlabs) ~= size(temp)
     error('rm_xlabs do not match')
 end
 
+% change gamma_fetusORmilk
+rmxlabs_preg = rm_xlabs;
+for ii = 1:length(rmxlabs_preg)
+    disp(rmxlabs_preg{ii})
+    if strcmp(rmxlabs_preg{ii}, '\Gamma_{x}')
+        rmxlabs_preg{ii} = '\Gamma_{Fetus}';
+    end
+end
+
+rmxlabs_lact = rm_xlabs;
+for ii = 1:length(rmxlabs_lact)
+    if strcmp(rmxlabs_lact{ii}, '\Gamma_{x}')
+        rmxlabs_lact{ii} = '\Gamma_{Milk}';
+    end
+end
+
 %% make figures
 temp = [rm_pregdat, rm_lactdat];
 clim = [min(temp,[],'all'), max(temp,[],'all')];
@@ -45,10 +61,10 @@ fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = turbo;
 
-figure(1)
+figure(22)
 clf
 subplot(2,1,1)
-h = heatmap(rm_xlabs, ylabels, rm_pregdat,...
+h = heatmap(rmxlabs_preg, ylabels, rm_pregdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'on');
@@ -58,7 +74,7 @@ ylabel('Pregnant to virgin')
 h.FontSize = fsize;
 
 subplot(2,1,2)
-h = heatmap(rm_xlabs, ylabels, rm_lactdat,...
+h = heatmap(rmxlabs_lact, ylabels, rm_lactdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'off');

@@ -9,7 +9,7 @@ run('read_in_params.m')
 base_D3inact = params(23);
 
 %%% D3 inact changes
-D3change_vals = (100:-1:1)./100.0;
+D3change_vals = (100:-1:0)./100.0;
 
 
 %%% set ICs

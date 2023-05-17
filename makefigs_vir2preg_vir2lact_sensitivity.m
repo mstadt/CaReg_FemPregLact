@@ -34,6 +34,22 @@ if size(rm_xlabs) ~= size(temp)
     error('rm_xlabs do not match')
 end
 
+% change gamma_fetusORmilk
+rmxlabs_preg = rm_xlabs;
+for ii = 1:length(rmxlabs_preg)
+    %disp(rmxlabs_preg{ii})
+    if strcmp(rmxlabs_preg{ii}, '\Gamma_{x}')
+        rmxlabs_preg{ii} = '\Gamma_{Fetus}';
+    end
+end
+
+rmxlabs_lact = rm_xlabs;
+for ii = 1:length(rmxlabs_lact)
+    if strcmp(rmxlabs_lact{ii}, '\Gamma_{x}')
+        rmxlabs_lact{ii} = '\Gamma_{Milk}';
+    end
+end
+
 %% make figures
 temp = [rm_pregdat, rm_lactdat];
 clim = [min(temp,[],'all'), max(temp,[],'all')];
@@ -46,7 +62,7 @@ cmap = turbo;
 figure(1)
 clf
 subplot(2,1,1)
-h = heatmap(rm_xlabs, ylabels, rm_pregdat,...
+h = heatmap(rmxlabs_preg, ylabels, rm_pregdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'on');
@@ -56,7 +72,8 @@ ylabel('Virgin to pregnant')
 h.FontSize = fsize;
 
 subplot(2,1,2)
-h = heatmap(rm_xlabs, ylabels, rm_lactdat,...
+
+h = heatmap(rmxlabs_lact, ylabels, rm_lactdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'off');
@@ -64,7 +81,7 @@ ylabel('Virgin to lactating')
 xlabel('Parameters')
 h.FontSize = fsize;
 
-sgtitle('Impact of individual maternal adaptations on virgin model', 'fontsize', 24)
+%sgtitle('Impact of individual maternal adaptations on virgin model', 'fontsize', 24)
 
 
 

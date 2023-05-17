@@ -24,7 +24,7 @@ fprintf('loading %s params \n', sexORrep)
 run('read_in_params.m')
 
 % % change parameters here!
-
+FetORMilk = 1.08e-3; params(37) = FetORMilk;
 %--------------------
 % End of user input
 %--------------------
@@ -182,5 +182,5 @@ if save_SS
     save(fname_save, 'SS', 'valsSS','params','sexORrep',...
                         'exitflag', 'residual', 'param_names')
 
-    fprintf('results saved to %s \n', fname_save);
+    fprintf('results saved to: \n %s \n', fname_save);
 end

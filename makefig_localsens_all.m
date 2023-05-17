@@ -126,8 +126,8 @@ h1 = heatmap(xlabs_rm, ylabels, male_vals_rm,...
 h1.FontSize = fsize;
 ylabel('Male')
 % remove xlabels
-Ax = gca;
-Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
+%Ax = gca;
+%Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 % female fig
 subplot(4,1,2)
 h1 = heatmap(xlabs_rm, ylabels, female_vals_rm,...
@@ -137,8 +137,8 @@ h1 = heatmap(xlabs_rm, ylabels, female_vals_rm,...
 h1.FontSize = fsize;
 ylabel('Female')
 % remove xlabels
-Ax = gca;
-Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
+%Ax = gca;
+%Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 % preg fig
 subplot(4,1,3)
 h1 = heatmap(xlabs_rm, ylabels, preg_vals_rm,...
@@ -148,8 +148,8 @@ h1 = heatmap(xlabs_rm, ylabels, preg_vals_rm,...
 h1.FontSize = fsize;
 ylabel('Pregnancy')
 % remove xlabels
-Ax = gca;
-Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
+%Ax = gca;
+%Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 % lact fig
 subplot(4,1,4)
 h1 = heatmap(xlabs_rm, ylabels, lact_vals_rm,...
@@ -159,7 +159,7 @@ h1 = heatmap(xlabs_rm, ylabels, lact_vals_rm,...
 h1.FontSize = fsize;
 ylabel('Lactation')
 
-sgtitle('Local sensitivity analysis', 'fontsize', 24)
+%sgtitle('Local sensitivity analysis', 'fontsize', 24)
 end
 
 %------------------
