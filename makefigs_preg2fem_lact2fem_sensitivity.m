@@ -66,7 +66,7 @@ ylabel('Lactating to virgin')
 xlabel('Parameters')
 h.FontSize = fsize;
 
-sgtitle('Impact of individual maternal adaptations on pregnancy and lactation models', 'fontsize', 24)
+%sgtitle('Impact of individual maternal adaptations on pregnancy and lactation models', 'fontsize', 24)
 
 
 

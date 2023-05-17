@@ -66,7 +66,7 @@ ylabel('Female')
 xlabel('Parameters')
 h.FontSize = fsize;
 
-sgtitle('Impact of individual sex differences', 'fontsize', 24)
+%sgtitle('Impact of individual sex differences', 'fontsize', 24)
 
 %------------------
 % functions used
