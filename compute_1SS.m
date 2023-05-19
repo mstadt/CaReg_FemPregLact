@@ -24,7 +24,7 @@ fprintf('loading %s params \n', sexORrep)
 run('read_in_params.m')
 
 % % change parameters here!
-FetORMilk = 1.08e-3; params(37) = FetORMilk;
+GamAbs0 = 0.3; params(26) = GamAbs0;
 %--------------------
 % End of user input
 %--------------------

@@ -112,6 +112,22 @@ AllNan = intersect(temp, Nan_lact);
 [~, preg_vals_rm] = removeAllNan(AllNan, xlabels, preg_vals);
 [~, lact_vals_rm] = removeAllNan(AllNan, xlabels, lact_vals);
 
+% change gamma_fetusORmilk
+rmxlabs_preg = xlabs_rm;
+for ii = 1:length(rmxlabs_preg)
+    disp(rmxlabs_preg{ii})
+    if strcmp(rmxlabs_preg{ii}, '\Gamma_{x}')
+        rmxlabs_preg{ii} = '\Gamma_{Fetus}';
+    end
+end
+
+rmxlabs_lact = xlabs_rm;
+for ii = 1:length(rmxlabs_lact)
+    if strcmp(rmxlabs_lact{ii}, '\Gamma_{x}')
+        rmxlabs_lact{ii} = '\Gamma_{Milk}';
+    end
+end
+
 % figure with removing 
 fig_remove = 1;
 if fig_remove
@@ -141,7 +157,8 @@ ylabel('Female')
 %Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 % preg fig
 subplot(4,1,3)
-h1 = heatmap(xlabs_rm, ylabels, preg_vals_rm,...
+
+h1 = heatmap(rmxlabs_preg, ylabels, preg_vals_rm,...
                 'colormap', colmap,...
                 'MissingDataColor', cmissdat, 'MissingDataLabel', labmissdat, ...
                 'ColorLimits', clims, 'colorbarvisible', 'on');
@@ -152,7 +169,7 @@ ylabel('Pregnancy')
 %Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 % lact fig
 subplot(4,1,4)
-h1 = heatmap(xlabs_rm, ylabels, lact_vals_rm,...
+h1 = heatmap(rmxlabs_lact, ylabels, lact_vals_rm,...
                 'colormap', colmap,...
                 'MissingDataColor', cmissdat, 'MissingDataLabel', labmissdat, ...
                 'ColorLimits', clims, 'colorbarvisible', 'off');

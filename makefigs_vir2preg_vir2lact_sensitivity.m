@@ -37,7 +37,6 @@ end
 % change gamma_fetusORmilk
 rmxlabs_preg = rm_xlabs;
 for ii = 1:length(rmxlabs_preg)
-    %disp(rmxlabs_preg{ii})
     if strcmp(rmxlabs_preg{ii}, '\Gamma_{x}')
         rmxlabs_preg{ii} = '\Gamma_{Fetus}';
     end

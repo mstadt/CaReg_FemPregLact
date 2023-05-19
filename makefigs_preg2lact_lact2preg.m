@@ -44,7 +44,7 @@ fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = turbo; %cool;
 
-figure(1)
+figure(15)
 clf
 subplot(2,1,1)
 h = heatmap(rm_xlabs, ylabels, rm_p2ldat,...
