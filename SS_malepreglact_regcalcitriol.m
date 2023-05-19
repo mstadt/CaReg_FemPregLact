@@ -1,6 +1,8 @@
 % This script creates the baseline steady state figures for the male,
 % female, preg, lact, male preg, male lact
 
+% Uses results from compare_male2preglact.m
+
 %-----------------------
 % User Input
 %-----------------------
@@ -49,9 +51,17 @@ lab5 = 'male lact D_3^*';
 
 % figure specs
 w = 0.75;
-cmap = spring(6); %summer(14); %parula(14);
-cmap2 = spring(10);
-cvals = [cmap2(1,:); cmap(5,:); cmap2(10,:); cmap(4,:); cmap2(3,:)];
+cmap1 = summer(4);
+cmap2 = parula(5);
+cvals_male = [cmap1(4,:); cmap1(2,:); cmap1(1,:)];
+%cvals_female = [cmap2(3,:); cmap2(2,:); cmap2(1,:)]; % match female sims to colors from the SSconc figs
+
+cvals = [[0,0,0];cvals_male(2,:); 
+                cmap2(4,:); 
+                cvals_male(3,:); 
+                cmap2(2,:)];
+
+
 ce = 'black'; % error bar color
 f_gca = 18;
 
@@ -89,8 +99,109 @@ end
 
 
 
+%% manuscript figure
+figure(40)
+clf;
+nrows = 2; ncols = 3;
+% PTH
+subplot(nrows,ncols,1)
+convals = [SS1(2)/Vp_1 SS2(2)/Vp_2 SS3(2)/Vp_3 SS4(2)/Vp_4 SS5(2)/Vp_5];
+hold on
+for ii = 2:5
+    bar(xvals(ii), convals(ii),w, 'facecolor', cvals(ii,:))
+end
+ylabel('[PTH]_p (pmol/L)')
+%title('Plasma PTH concentration')
+xticks(xvals)
+xticklabels(xnames)
+set(gca, 'fontsize', f_gca)
+grid on
+
+% Ca2+
+subplot(nrows,ncols,2)
+convals = [SS1(3)/Vp_1 SS2(3)/Vp_2 SS3(3)/Vp_3 SS4(3)/Vp_4 SS5(3)/Vp_5];
+hold on
+for ii = 2:5
+    bar(xvals(ii), convals(ii),w, 'facecolor', cvals(ii,:))
+end
+ylabel('[Ca^{2+}]_p (mmol/L)')
+%title('Plasma calcium concentration')
+xticks(xvals)
+xticklabels(xnames)
+set(gca, 'fontsize', f_gca)
+ylim([0.0,1.4])
+yticks(0.0:0.2:1.4)
+grid on
+
+% 1,25(OH)2D3
+subplot(nrows,ncols,3)
+convals = [SS1(4)/Vp_1 SS2(4)/Vp_2 SS3(4)/Vp_3 SS4(4)/Vp_4 SS5(4)/Vp_5];
+hold on
+for ii = 2:5
+    bar(xvals(ii), convals(ii),w, 'facecolor', cvals(ii,:))
+end
+ylabel('[1,25(OH)_2D_3]_p (pmol/L)')
+%title('Plasma calcitriol concentration')
+xticks(xvals)
+xticklabels(xnames)
+set(gca, 'fontsize', f_gca)
+grid on
 
 
+% intestinal absorption
+subplot(nrows,ncols,4)
+mmol2mumol = 1e3;
+% gut absorption
+temp = mmol2mumol*[vals1.Gut_absorption, vals2.Gut_absorption, vals3.Gut_absorption, vals4.Gut_absorption, vals5.Gut_absorption];
+hold on
+for ii = 2:5
+    bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
+end
+ylabel('\Gamma_{abs} (\mumol/min)')
+%title('Intestinal absorption')
+xticks(xvals)
+xticklabels(xnames)
+ylim([0.0,2.4])
+yticks(0.0:0.4:2.4)
+set(gca,'fontsize',f_gca)
+grid on
+
+% bone 2 plasma
+subplot(nrows,ncols,5)
+% bone 2 plasma= resorption + fastpool2plasma
+temp1 = mmol2mumol*[vals1.Bone_resorption, vals2.Bone_resorption, vals3.Bone_resorption, vals4.Bone_resorption, vals5.Bone_resorption];
+temp2 = mmol2mumol*[vals1.FastPool_to_Plasma, vals2.FastPool_to_Plasma, vals3.FastPool_to_Plasma, vals4.FastPool_to_Plasma, vals5.FastPool_to_Plasma];
+temp = temp1 + temp2;
+hold on
+for ii = 2:5
+    bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
+end
+ylabel('\Gamma_{res} + \Gamma_{f-p} (\mumol/min)')
+%title('Bone to Plasma')
+xticks(xvals)
+xticklabels(xnames)
+ylim([0.0 1.2])
+yticks(0.0:0.2:1.2)
+set(gca,'fontsize',f_gca)
+grid on
+
+% urine
+subplot(nrows,ncols,6)
+temp = mmol2mumol*[vals1.Urine_excretion, vals2.Urine_excretion, vals3.Urine_excretion, vals4.Urine_excretion, vals5.Urine_excretion];
+hold on
+for ii = 2:5
+    bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
+end
+ylabel('\Gamma_u (\mumol/min)')
+%title('Urine excretion')
+xticks(xvals)
+xticklabels(xnames)
+ylim([0.0,0.07])
+yticks(0.0:0.01:0.07)
+set(gca,'fontsize',f_gca)
+grid on
+
+AddLetters2Plots(figure(40), {'(a)', '(b)', '(c)', '(d)', '(e)', '(f)'}, 'FontSize', 18)
 %% plasma concentrations
 figure(1)
 clf;
@@ -233,6 +344,9 @@ ylim([0.0,1.2])
 yticks(0.0:0.2:1.2)
 set(gca,'fontsize',f_gca)
 grid on
+
+
+
 
 
 
