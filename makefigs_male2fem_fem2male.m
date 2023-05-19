@@ -51,7 +51,7 @@ h = heatmap(rm_xlabs, ylabels, rm_m2fdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'on');
-ylabel('Male')
+ylabel('Male to female')
 %Ax = gca;
 %Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 h.FontSize = fsize;
@@ -62,11 +62,11 @@ h = heatmap(rm_xlabs, ylabels, rm_f2mdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'off');
-ylabel('Female')
+ylabel('Female to male')
 xlabel('Parameters')
 h.FontSize = fsize;
 
-sgtitle('Impact of individual sex differences', 'fontsize', 24)
+%sgtitle('Impact of individual sex differences', 'fontsize', 24)
 
 %------------------
 % functions used

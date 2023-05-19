@@ -65,7 +65,7 @@ function n = convert_paramname(param_name)
     elseif strcmp(param_name, 'Lambda_DCT0')
         n = '\lambda_{DCT0}';
     elseif strcmp(param_name, 'FetusORMilk')
-        n = '\Gamma_{FetORMilk}';
+        n = '\Gamma_{x}';
     elseif strcmp(param_name, 'K_Ca_CASR')
         n = 'K_{Ca}^{CASR}';
     elseif strcmp(param_name, 'K_conv_PTH')
