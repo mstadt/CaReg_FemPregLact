@@ -44,14 +44,14 @@ fsize = 18;
 ylabels = {'[PTH]_p', '[Ca^{2+}]_p', '[1,25(OH)_2D_3]_p'};
 cmap = turbo; %cool;
 
-figure(1)
+figure(15)
 clf
 subplot(2,1,1)
 h = heatmap(rm_xlabs, ylabels, rm_p2ldat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'on');
-ylabel('Pregnant')
+ylabel('Pregnant to lactating')
 %Ax = gca;
 %Ax.XDisplayLabels = nan(size(Ax.XDisplayData));
 h.FontSize = fsize;
@@ -62,11 +62,11 @@ h = heatmap(rm_xlabs, ylabels, rm_l2pdat,...
         'colormap', cmap,...
         'MissingDataColor', cmissing, 'MissingDataLabel', labmissing,...
         'ColorLimits', clim, 'colorbarvisible', 'off');
-ylabel('Lactating')
+ylabel('Lactating to pregnant')
 xlabel('Parameters')
 h.FontSize = fsize;
 
-sgtitle('Differential impact of pregnancy and lactation adaptations', 'fontsize', 24)
+%sgtitle('Differential impact of pregnancy and lactation adaptations', 'fontsize', 24)
 
 %------------------
 % functions used

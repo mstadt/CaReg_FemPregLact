@@ -108,7 +108,7 @@ for ii = 1:compare
     bar(xvals(ii), convals(ii),w, 'facecolor', cvals(ii,:))
 end
 ylabel('[PTH]_p (pmol/L)')
-title('Plasma PTH concentration')
+%title('Plasma PTH concentration')
 xticks(xvals)
 xticklabels(xnames)
 set(gca, 'fontsize', f_gca)
@@ -125,7 +125,7 @@ for ii = 1:compare
     bar(xvals(ii), convals(ii),w, 'facecolor', cvals(ii,:))
 end
 ylabel('[Ca^{2+}]_p (mmol/L)')
-title('Plasma calcium concentration')
+%title('Plasma calcium concentration')
 xticks(xvals)
 xticklabels(xnames)
 set(gca, 'fontsize', f_gca)
@@ -143,11 +143,13 @@ for ii = 1:compare
     bar(xvals(ii), convals(ii),w, 'facecolor', cvals(ii,:))
 end
 ylabel('[1,25(OH)_2D_3]_p (pmol/L)')
-title('Plasma calcitriol concentration')
+%title('Plasma calcitriol concentration')
 xticks(xvals)
 xticklabels(xnames)
 set(gca, 'fontsize', f_gca)
 grid on
+
+AddLetters2Plots(figure(1), {'(a)', '(b)', '(c)'}, 'FontSize', 18)
 
 %% calcium fluxes
 % bone together
@@ -165,7 +167,7 @@ for ii = 1:compare
     bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
 end
 ylabel('\Gamma_{abs} (\mumol/min)')
-title('Intestinal absorption')
+%title('Intestinal absorption')
 xticks(xvals)
 xticklabels(xnames)
 set(gca,'fontsize',f_gca)
@@ -181,7 +183,7 @@ for ii = 1:compare
     bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
 end
 ylabel('\Gamma_{res} + \Gamma_{f-p} (\mumol/min)')
-title('Bone to Plasma')
+%title('Bone to Plasma')
 xticks(xvals)
 xticklabels(xnames)
 ylim([0.0 1.2])
@@ -213,7 +215,7 @@ for ii = 1:compare
     bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
 end
 ylabel('\Gamma_u (\mumol/min)')
-title('Urine excretion')
+%title('Urine excretion')
 xticks(xvals)
 xticklabels(xnames)
 ylim([0.0,0.06])
@@ -231,7 +233,7 @@ for ii = 1:compare
     bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
 end
 ylabel('\Gamma_{p-f} (\mumol/min)')
-title('Plasma to Bone')
+%title('Plasma to Bone')
 ylim([0.0, 2.1])
 xticks(xvals)
 xticklabels(xnames)
@@ -261,14 +263,15 @@ hold on
 for ii = 1:compare
     bar(xvals(ii), temp(ii),w,'facecolor',cvals(ii,:))
 end
-ylabel('\Gamma_{FetusORMilk} (\mumol/min)')
-title('Fetus or milk calcium')
+ylabel('\Gamma_{x} (\mumol/min)')
+%title('Fetus or milk calcium')
 xticks(xvals)
 xticklabels(xnames)
 ylim([0.0,1.2])
 yticks(0.0:0.2:1.2)
 set(gca,'fontsize',f_gca)
 grid on
+AddLetters2Plots(figure(2), {'(a)', '(b)', '(c)', '(d)', '(e)'}, 'FontSize', 18)
 
 
 % calcium fluxes

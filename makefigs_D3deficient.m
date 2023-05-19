@@ -2,17 +2,17 @@
 clear all;
 
 % user input
-D3change_vals = (100:-1:1)./100.0;
+D3change_vals = (100:-1:0)./100.0;
 
 fig_D3change = (ones(size(D3change_vals)) - D3change_vals) * 100;
-notes_male = 'may16';
-notes_female = 'may16';
-notes_preg = 'PTH2';
-notes_lact = 'PTH2';
-in_date_male = '16-May-2023';
-in_date_female = '16-May-2023';
-in_date_preg = '16-May-2023';
-in_date_lact = '16-May-2023';
+notes_male = 'upto100';
+notes_female = 'upto100';
+notes_preg = 'upto100';
+notes_lact = 'upto100';
+in_date_male = '17-May-2023';
+in_date_female = '17-May-2023';
+in_date_preg = '17-May-2023';
+in_date_lact = '17-May-2023';
 
 [male_SS, male_vars, male_SS_norm, male_vars_norm]         = getvals(D3change_vals, notes_male, 'male', in_date_male);
 [female_SS, female_vars, female_SS_norm, female_vars_norm] = getvals(D3change_vals, notes_female, 'female', in_date_female);
@@ -71,12 +71,13 @@ for ii = 1:length(inds)
 end
 xlabel(xlab)
 ylabel('Normalized concentration')
+ylim([0.0,2.5])
 legend('','[PTH]_p (virgin)', '[PTH]_p (pregnancy)', '[PTH]_p (lactation)',...
         '[Ca^{2+}]_p (virgin)','[Ca^{2+}]_p (pregnancy)','[Ca^{2+}]_p (lactation)',...
         '[1,25(OH)_2D_3]_p (virgin)', '[1,25(OH)_2D_3]_p (pregnancy)', '[1,25(OH)_2D_3]_p (lactation)',...
         'fontsize',fleg,...
         'location','northwest')
-title('Impact of vitamin D_3 deficiency on plasma concentrations during pregnancy and lactation')
+%title('Impact of vitamin D_3 deficiency on plasma concentrations during pregnancy and lactation')
 set(gca, 'fontsize', f_gca)
 grid on
 
@@ -103,65 +104,65 @@ legend('','Gut absorption (virgin)', 'Gut absorption (pregnancy)', 'Gut absorpti
     'FastPool to Plasma (virgin)', 'FastPool to Plasma (pregnancy)', 'FastPool to Plasma (lactation)',...
     'fontsize', fleg,...
     'location', 'southwest')
-title('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation')
+%title('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation')
 set(gca, 'fontsize', f_gca)
 grid on
 
-figure(4)
-% inward fluxes
-clf
-subplot(1,2,1)
-hold on
-inds = [4, 9, 14];
-cmap3 = parula(8);
-m=2;
-yline(1.0, 'color', darkgray, 'linewidth', 2.5)
-for jj = 1:length(inds)
-    ind = inds(jj);
-    plot(fig_D3change, female_vars_norm(:,ind), 'linestyle', ls1,'color',cmap3(m*jj,:), 'linewidth',lw)
-    plot(fig_D3change, preg_vars_norm(:,ind), 'linestyle',ls2, 'color',cmap3(m*jj,:), 'linewidth',lw)
-    plot(fig_D3change, lact_vars_norm(:,ind), 'linestyle', ls3, 'color', cmap3(m*jj,:), 'linewidth',lw)
-end
-xlabel(xlab)
-ylabel('Normalized fluxes')
-legend('','Gut absorption (virgin)', 'Gut absorption (pregnancy)', 'Gut absorption (lactation)',...
-    'Bone resorption (virgin)', 'Bone resorption (pregnancy)', 'Bone resorption (lactation)',...
-    'FastPool to Plasma (virgin)', 'FastPool to Plasma (pregnancy)', 'FastPool to Plasma (lactation)',...
-    'fontsize', fleg,...
-    'location', 'southwest')
-title('Inward calcium fluxes')
-set(gca, 'fontsize', f_gca)
-grid on
+% figure(4)
+% % inward fluxes
+% clf
+% subplot(1,2,1)
+% hold on
+% inds = [4, 9, 14];
+% cmap3 = parula(8);
+% m=2;
+% yline(1.0, 'color', darkgray, 'linewidth', 2.5)
+% for jj = 1:length(inds)
+%     ind = inds(jj);
+%     plot(fig_D3change, female_vars_norm(:,ind), 'linestyle', ls1,'color',cmap3(m*jj,:), 'linewidth',lw)
+%     plot(fig_D3change, preg_vars_norm(:,ind), 'linestyle',ls2, 'color',cmap3(m*jj,:), 'linewidth',lw)
+%     plot(fig_D3change, lact_vars_norm(:,ind), 'linestyle', ls3, 'color', cmap3(m*jj,:), 'linewidth',lw)
+% end
+% xlabel(xlab)
+% ylabel('Normalized fluxes')
+% legend('','Gut absorption (virgin)', 'Gut absorption (pregnancy)', 'Gut absorption (lactation)',...
+%     'Bone resorption (virgin)', 'Bone resorption (pregnancy)', 'Bone resorption (lactation)',...
+%     'FastPool to Plasma (virgin)', 'FastPool to Plasma (pregnancy)', 'FastPool to Plasma (lactation)',...
+%     'fontsize', fleg,...
+%     'location', 'southwest')
+% title('Inward calcium fluxes')
+% set(gca, 'fontsize', f_gca)
+% grid on
+% 
+% %figure(5)
+% % outward fluxes
+% % virgin, preg, lact
+% %clf
+% 
+% subplot(1,2,2)
+% hold on
+% inds = [7, 8, 13];
+% cmap4 =autumn(8);
+% m=2;
+% yline(1.0, 'color', darkgray, 'linewidth', 2.5)
+% for ii = 1:length(inds)
+%     ind = inds(ii);
+%     plot(fig_D3change, female_vars_norm(:,ind), 'linestyle', ls1,'color',cmap4(m*ii,:), 'linewidth',lw)
+%     plot(fig_D3change, preg_vars_norm(:,ind), 'linestyle',ls2, 'color',cmap4(m*ii,:), 'linewidth',lw)
+%     plot(fig_D3change, lact_vars_norm(:,ind), 'linestyle', ls3, 'color', cmap4(m*ii,:), 'linewidth',lw)
+% end
+% xlabel(xlab)
+% ylabel('Normalized fluxes')
+% legend('','Urine excretion (virgin)', 'Urine excretion (pregnancy)', 'Urine excretion (lactation)',...
+%     'Bone accretion (virgin)', 'Bone accretion (pregnancy)', 'Bone accretion (lactation)',...
+%     'Plasma to FastPool (virgin)', 'Plasma to FastPool (pregnancy)', 'Plasma to FastPool (lactation)',...
+%     'fontsize', fleg,...
+%     'location', 'southwest')
+% title('Outward calcium fluxes')
+% set(gca, 'fontsize', f_gca)
+% grid on
 
-%figure(5)
-% outward fluxes
-% virgin, preg, lact
-%clf
-
-subplot(1,2,2)
-hold on
-inds = [7, 8, 13];
-cmap4 =autumn(8);
-m=2;
-yline(1.0, 'color', darkgray, 'linewidth', 2.5)
-for ii = 1:length(inds)
-    ind = inds(ii);
-    plot(fig_D3change, female_vars_norm(:,ind), 'linestyle', ls1,'color',cmap4(m*ii,:), 'linewidth',lw)
-    plot(fig_D3change, preg_vars_norm(:,ind), 'linestyle',ls2, 'color',cmap4(m*ii,:), 'linewidth',lw)
-    plot(fig_D3change, lact_vars_norm(:,ind), 'linestyle', ls3, 'color', cmap4(m*ii,:), 'linewidth',lw)
-end
-xlabel(xlab)
-ylabel('Normalized fluxes')
-legend('','Urine excretion (virgin)', 'Urine excretion (pregnancy)', 'Urine excretion (lactation)',...
-    'Bone accretion (virgin)', 'Bone accretion (pregnancy)', 'Bone accretion (lactation)',...
-    'Plasma to FastPool (virgin)', 'Plasma to FastPool (pregnancy)', 'Plasma to FastPool (lactation)',...
-    'fontsize', fleg,...
-    'location', 'southwest')
-title('Outward calcium fluxes')
-set(gca, 'fontsize', f_gca)
-grid on
-
-sgtitle('Impact of vitamin D_3 deficiency on inward calcium fluxes during pregnancy and lactation', 'fontsize', 20)
+%sgtitle('Impact of vitamin D_3 deficiency on inward calcium fluxes during pregnancy and lactation', 'fontsize', 20)
 
 % sex-specific
 figure(10)
@@ -176,12 +177,13 @@ for ii = 1:length(inds)
 end
 xlabel(xlab)
 ylabel('Normalized concentration')
+ylim([0.0, 2.5])
 legend('','[PTH]_p (male)', '[PTH]_p (female)', ...
         '[Ca^{2+}]_p (male)','[Ca^{2+}]_p (female)',...
         '[1,25(OH)_2D_3]_p (male)', '[1,25(OH)_2D_3]_p (female)',...
         'fontsize',fleg,...
         'location','northwest')
-title('Impact of vitamin D_3 deficiency on plasma concentrations in males versus females')
+%title('Impact of vitamin D_3 deficiency on plasma concentrations in males versus females')
 set(gca, 'fontsize', f_gca)
 grid on
 
@@ -262,7 +264,7 @@ legend('','Urine Excretion (virgin)', 'Urine Excretion (pregnancy)', 'Urine Excr
 title('Outward calcium fluxes')
 set(gca, 'fontsize', f_gca)
 
-sgtitle('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation', 'fontsize', 20)
+%sgtitle('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation', 'fontsize', 20)
 
 
 % combine bone fluxes together (resorption + Fast2Plasma, Accretion + Plasma2FastPool) 
@@ -331,7 +333,7 @@ legend('','Gut absorption (virgin)', 'Gut absorption (pregnancy)', 'Gut absorpti
             'location', 'southwest')
 set(gca, 'fontsize', f_gca)
 
-title('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation', 'fontsize', 20)
+%title('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation', 'fontsize', 20)
 
 %%
 %------------------------------------------------
