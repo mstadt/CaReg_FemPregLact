@@ -17,14 +17,14 @@ SS1 = SSdat1.SS;
 lab1 = 'male';
 
 % male preg file
-fname2 = './SS/16-May-2023_calcium_mod_SS_sexORrep-malepreg_notes-pregmale.mat';
+fname2 = './results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malepreg_notes-pregmale.mat';
 SSdat2 = load(fname2);
 vals2 = SSdat2.valsSS;
 SS2 = SSdat2.SS;
 lab2 = 'male preg';
 
 % male lact file
-fname3 = './SS/16-May-2023_calcium_mod_SS_sexORrep-malelact_notes-lactmale.mat';
+fname3 = './results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malelact_notes-lactmale.mat';
 SSdat3 = load(fname3);
 vals3 = SSdat3.valsSS;
 SS3 = SSdat3.SS;

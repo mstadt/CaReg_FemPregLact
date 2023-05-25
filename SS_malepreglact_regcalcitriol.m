@@ -1,5 +1,6 @@
-% This script creates the baseline steady state figures for the male,
-% female, preg, lact, male preg, male lact
+% This script creates the baseline steady state figures for the male preg,
+% male preg with female preg calcitriol, male lact, and male lact with
+% female lact calcitriol
 
 % Uses results from compare_male2preglact.m
 
@@ -18,28 +19,28 @@ SS1 = SSdat1.SS;
 lab1 = 'male';
 
 % male preg file
-fname2 = './SS/16-May-2023_calcium_mod_SS_sexORrep-malepreg_notes-pregmale.mat';
+fname2 = './results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malepreg_notes-pregmale.mat';
 SSdat2 = load(fname2);
 vals2 = SSdat2.valsSS;
 SS2 = SSdat2.SS;
 lab2 = 'male preg';
 
 % male preg low calcitriol file
-fname3 = './SS/16-May-2023_calcium_mod_SS_sexORrep-malepreg_lowcalcitriol_notes-D3fixed.mat';
+fname3 = './results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malepreg_lowcalcitriol_notes-D3fixed.mat';
 SSdat3 = load(fname3);
 vals3 = SSdat3.valsSS;
 SS3 = SSdat3.SS;
 lab3 = 'male preg D_3^*';
 
 % male lact file
-fname4 = './SS/16-May-2023_calcium_mod_SS_sexORrep-malelact_notes-lactmale.mat';
+fname4 = './results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malelact_notes-lactmale.mat';
 SSdat4 = load(fname4);
 vals4 = SSdat4.valsSS;
 SS4 = SSdat4.SS;
 lab4 = 'male lact';
 
 % male lact - low calcitriol
-fname5 = './SS/16-May-2023_calcium_mod_SS_sexORrep-malelact_lowcalcitriol_notes-D3fixed.mat';
+fname5 = './results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malelact_lowcalcitriol_notes-D3fixed.mat';
 SSdat5 = load(fname5);
 vals5 = SSdat5.valsSS;
 SS5 = SSdat5.SS;
