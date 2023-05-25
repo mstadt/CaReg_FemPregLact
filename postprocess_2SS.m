@@ -12,12 +12,13 @@ bone_vals = 1;
 
 
 % load SS
-SS1dat = load('./SSbest/16-May-2023_calcium_mod_SS_sexORrep-preg_notes-PTHupdate2.mat');
+SS1dat = load('./results_malepreglact/16-May-2023_calcium_mod_SS_sexORrep-malelact_notes-lactmale.mat');
 vals1 = SS1dat.valsSS;
 SS1 = SS1dat.SS;
 lab1 = 'SS1';
+SS1dat.sexORrep = 'lact'
 
-SS2dat = load('./SS/19-May-2023_calcium_mod_SS_sexORrep-preg_notes-GamAbs0=female.mat');
+SS2dat = load('./SSbest/16-May-2023_calcium_mod_SS_sexORrep-lact_notes-PTHupdate2.mat');
 vals2 = SS2dat.valsSS;
 SS2 = SS2dat.SS;
 lab2 = 'SS2';

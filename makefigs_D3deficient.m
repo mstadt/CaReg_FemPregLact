@@ -32,7 +32,7 @@ darkgray = graymap(2,:);
 
 f_gca = 18;
 fleg = 16;
-xlab = 'Inhibition of inactive vitamin D_3 concentration (%)';
+xlab = 'Inhibition of inactive vitamin D concentration (%)';
 
 % figure(1)
 % clf
@@ -235,7 +235,7 @@ legend('','Gut absorption (virgin)', 'Gut absorption (pregnancy)', 'Gut absorpti
             'Bone to plasma (virgin)', 'Bone to plasma (pregnancy)', 'Bone to plasma (lactation)',...
             'fontsize', fleg,...
             'location', 'southwest')
-title('Inward calcium fluxes')
+%title('Inward calcium fluxes')
 ylim([0.3,1.1])
 set(gca, 'fontsize', f_gca)
 
@@ -261,8 +261,10 @@ legend('','Urine Excretion (virgin)', 'Urine Excretion (pregnancy)', 'Urine Excr
             'Plasma to bone (virgin)', 'Plasma to bone (pregnancy)', 'Plasma to bone (lactation)',...
             'fontsize', fleg,...
             'location', 'southwest')
-title('Outward calcium fluxes')
+%title('Outward calcium fluxes')
 set(gca, 'fontsize', f_gca)
+
+AddLetters2Plots(figure(20), {'(a)', '(b)'}, 'FontSize', 18)
 
 %sgtitle('Impact of vitamin D_3 deficiency on calcium fluxes during pregnancy and lactation', 'fontsize', 20)
 
