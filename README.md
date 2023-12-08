@@ -1,6 +1,6 @@
 # Calcium regulation
  Code for mathematical models of calcium homeostasis in a male rat, female (virgin) rat, pregnant rat, and lactating rat. 
- This code was used to generate the results in "Mathematical modeling of calcium homeostasis in female rats: An analysis of sex differences and maternal adaptations" by Melissa Stadt & Anita Layton (under review).
+ This code was used to generate the results in ["Mathematical modeling of calcium homeostasis in female rats: An analysis of sex differences and maternal adaptations" by Melissa Stadt & Anita Layton](https://www.sciencedirect.com/science/article/pii/S0022519323001807).
  Copies of the figures are found under "FinalFigures/"
  
 ## Files for making figures in manuscript
